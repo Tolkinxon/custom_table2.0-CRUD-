@@ -5,17 +5,22 @@
 
 .App {
   height: 100vh;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 0px;
 }
-
+.wrapper-table {
+  padding: 10px;
+  background-color: lavender;
+}
 .table {
-  width: 100vw;
-  height: 12rem;
-  overflow-y: scroll;
-  overflow-x: hidden;
+  width: calc(100vw - 30px);
+  height: 15rem;
+  overflow: hidden;
+  border: 2px solid grey;
 }
 
 .table2 {
@@ -25,17 +30,10 @@
 .head .box {
   background-color: black;
   color: white;
-  width: 25%;
-  height: 3rem;
-}
-
-.head {
-  border-radius: 5px 5px 0px 0px;
 }
 
 .box {
-  padding-left: 20px;
-  width: 25%;
+  width: calc((100vw - 16rem) / 4);
   height: 3rem;
   display: flex;
   align-items: center;
@@ -43,13 +41,15 @@
 }
 
 .box:nth-child(1) {
-  width: 40px;
+  width: 14rem;
+  display: flex;
+  justify-content: center;
+  margin-right: 2rem;
 }
 
 .row {
   display: flex;
   align-items: center;
-  padding-right: 50px;
 }
 
 .row button {
@@ -72,17 +72,18 @@
 .hrow {
   background-color: black;
   position: fixed;
-  width: 100%;
+  width: calc(100vw - 30px);
   display: flex;
-  padding-right: 50px;
 }
 
-.space{
-  width: 85px;
-}
+
 
 .body {
   width: 100%;
+}
+
+body {
+  padding: 0px;
 }
 
 /********* ADD COMPONENT INPUTS *******/

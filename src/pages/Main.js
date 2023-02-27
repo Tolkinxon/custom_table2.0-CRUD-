@@ -38,7 +38,7 @@ function Main() {
           useReducer
         </h1>
         <button className="add-user">ADD USER</button>
-
+        <div className='wrapper-table'>
         <Table>
           <TableHead>
             <div className="hrow">
@@ -47,7 +47,7 @@ function Main() {
               <Box>Amount of products</Box>
               <Box>Protein</Box>
               <Box>Period of storage</Box>
-              <div className="space"></div>
+              <Box>Actions</Box>
             </div>
           </TableHead>
           <TableBody>
@@ -58,20 +58,22 @@ function Main() {
                 <Box>{row.amount}</Box>
                 <Box>{row.protein}</Box>
                 <Box>{row.storage}</Box>
-                <button>edit</button>
-
-                <button
-                  onClick={() => {
-                    delee(row.id)
-                  }}
-                  className="btn"
-                >
-                  delete
-                </button>
+                <Box>
+                  <button>edit</button>
+                  <button
+                    onClick={() => {
+                      delee(row.id)
+                    }}
+                    className="btn"
+                  >
+                    delete
+                  </button>
+                </Box>
               </TableRow>
             ))}
           </TableBody>
         </Table>
+        </div>
         <div className="showing-page-bar">
           <p>Showing 5 of 6 products</p>
           <label htmlFor="1">Show</label>
