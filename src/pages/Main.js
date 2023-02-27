@@ -33,6 +33,10 @@ function Main() {
 
   return (
     <>
+      <h1>
+        React CRUD application using JSON Server and useContext with useReducer
+      </h1>
+      <button>ADD USER</button>
       <div className="App">
         <Table>
           <TableHead>
@@ -65,15 +69,15 @@ function Main() {
             ))}
           </TableBody>
         </Table>
-        {/*         
-      <Input
-        setData={handleSubmit}
-      />
-      <Link to={`/edit`} className='link-edit'>
-        <button className='edit'>
-              edit data
-        </button>
-      </Link> */}
+        <div className="showing-page-bar">
+          <p>Showing 5 of 6 products</p>
+          <select name="amount_products" id="1">
+            <option value="4">4</option>
+            <option value="4">4</option>
+            <option value="4">4</option>
+            <option value="4">4</option>
+          </select>
+        </div>
       </div>
     </>
   )
