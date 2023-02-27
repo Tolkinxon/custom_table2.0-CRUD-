@@ -38,58 +38,64 @@ function Main() {
           useReducer
         </h1>
         <button className="add-user">ADD USER</button>
-        <div className='wrapper-table'>
-        <Table>
-          <TableHead>
-            <div className="hrow">
-              <Box className="id">ID</Box>
-              <Box>Products</Box>
-              <Box>Amount of products</Box>
-              <Box>Protein</Box>
-              <Box>Period of storage</Box>
-              <Box>Actions</Box>
-            </div>
-          </TableHead>
-          <TableBody>
-            {data.map((row, idx) => (
-              <TableRow key={row.id} id={idx}>
-                <Box className="id">{idx + 1}</Box>
-                <Box>{row.name}</Box>
-                <Box>{row.amount}</Box>
-                <Box>{row.protein}</Box>
-                <Box>{row.storage}</Box>
+        <div className="wrapper-table">
+          <Table>
+            <TableHead>
+              <div className="hrow">
+                <Box className="id">ID</Box>
+                <Box>Products</Box>
+                <Box>Amount of products</Box>
+                <Box>Protein</Box>
+                <Box>Period of storage</Box>
                 <Box>
-                  <button>edit</button>
-                  <button
-                    onClick={() => {
-                      delee(row.id)
-                    }}
-                    className="btn"
-                  >
-                    delete
-                  </button>
+                  <span>Actions</span>
                 </Box>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-        </div>
-        <div className="showing-page-bar">
+              </div>
+            </TableHead>
+            <TableBody>
+              {data.map((row, idx) => (
+                <TableRow key={row.id} id={idx}>
+                  <Box className="id">{idx + 1}</Box>
+                  <Box>{row.name}</Box>
+                  <Box>{row.amount}</Box>
+                  <Box>{row.protein}</Box>
+                  <Box>{row.storage}</Box>
+                  <Box>
+                    <button>edit</button>
+                    <button
+                      onClick={() => {
+                        delee(row.id)
+                      }}
+                      className="btn"
+                    >
+                      delete
+                    </button>
+                  </Box>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+
+          <div className="showing-page-bar">
           <p>Showing 5 of 6 products</p>
-          <label htmlFor="1">Show</label>
-          <select name="amount_products" id="1">
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-          </select>
           <div>
-            <i></i>
-            <span>1</span>
-            <span>2</span>
-            <i></i>
+            <label htmlFor="1">Show</label>
+            <select name="amount_products" id="1">
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+            </select>
+            <span>
+              <i></i>
+              <span>1</span>
+              <span>2</span>
+              <i></i>
+            </span>
           </div>
         </div>
+        </div>
+
       </div>
     </>
   )
