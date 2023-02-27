@@ -11,10 +11,7 @@ import { items } from '../reducer/provider'
 import { Link } from 'react-router-dom'
 
 function Main() {
-
-  const { setData, data,  incr,  handleSubmit, delee } = useContext(items)
-
-
+  const { setData, data, incr, handleSubmit, delee } = useContext(items)
 
   // ***************** GET REQUEST ****************
   useEffect(() => {
@@ -26,8 +23,6 @@ function Main() {
       .then((data) => data.json())
       .then((data) => setData(data))
   }, [incr])
-
-
 
   useEffect(() => {
     console.log('render')
@@ -47,6 +42,7 @@ function Main() {
               <Box>Amount of products</Box>
               <Box>Protein</Box>
               <Box>Period of storage</Box>
+              <Box></Box>
             </div>
           </TableHead>
           <TableBody>
@@ -69,7 +65,7 @@ function Main() {
             ))}
           </TableBody>
         </Table>
-{/*         
+        {/*         
       <Input
         setData={handleSubmit}
       />
