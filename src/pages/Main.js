@@ -4,12 +4,14 @@ import TableBody from '../components/TableBody'
 import TableRow from '../components/TableRow'
 import Box from '../components/Box'
 import '../App.css'
-import { useEffect } from 'react'
-import { useContext } from 'react'
+import { useEffect, useContext, useState } from 'react'
 import { items } from '../reducer/provider'
 import { Link } from 'react-router-dom'
 
 function Main() {
+  const [select, setSelect] = useState(0)
+  const [heightTable, setHeightTable] = useState(4)
+
   const { setData, data, incr, handleSubmit, delee } = useContext(items)
 
   // ***************** GET REQUEST ****************
@@ -30,6 +32,16 @@ function Main() {
       .then((data) => setData(data))
   }, [])
 
+  const pageRows = (e) => {
+    console.log(+e.target.value)
+    const count = +e.target.value ? +e.target.value : 4
+    setSelect((prev) => prev + 1)
+    if (select === 1) {
+      setHeightTable((count + 1) * 3)
+      setSelect(0)
+    }
+  }
+
   return (
     <>
       <div className="App">
@@ -37,9 +49,9 @@ function Main() {
           React CRUD application using JSON Server and useContext with
           useReducer
         </h1>
-        <button className="add-user">ADD USER</button>
+        <button className="add-product">ADD PRODUCT</button>
         <div className="wrapper-table">
-          <Table>
+          <Table style={heightTable}>
             <TableHead>
               <div className="hrow">
                 <Box className="id">ID</Box>
@@ -77,25 +89,30 @@ function Main() {
           </Table>
 
           <div className="showing-page-bar">
-          <p>Showing 5 of 6 products</p>
-          <div>
-            <label htmlFor="1">Show</label>
-            <select name="amount_products" id="1">
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-            </select>
-            <span>
-              <i></i>
-              <span>1</span>
-              <span>2</span>
-              <i></i>
-            </span>
+            <p>Showing 5 of 6 products</p>
+            <div>
+              <div>
+                <label htmlFor="1">Show</label>
+                <select
+                  name="amount_products"
+                  id="1"
+                  onClick={(e) => pageRows(e)}
+                >
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                </select>
+              </div>
+              <span>
+                <i class="fa-solid fa-angle-left"></i>
+                <span className="active-page">1</span>
+                <span>2</span>
+                <i class="fa-solid fa-angle-right"></i>
+              </span>
+            </div>
           </div>
         </div>
-        </div>
-
       </div>
     </>
   )
