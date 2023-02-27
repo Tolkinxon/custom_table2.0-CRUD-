@@ -4,12 +4,16 @@
 }
 
 .App {
-  text-align: center;
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+
+
 .table {
-  height: calc(100vh - 200px);
+  height: calc(100vh - 500px);
   overflow-y: scroll;
   overflow-x: hidden;
 }

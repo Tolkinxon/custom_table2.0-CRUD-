@@ -10,6 +10,8 @@ import '../App.css'
 import { useState, useEffect } from 'react'
 import Input2 from '../components/Input2'
 import { Link } from 'react-router-dom'
+import Input from '../components/Input'
+
 
 const Edit = () => {
   const { data, setSave } = useContext(items)
@@ -45,6 +47,7 @@ const Edit = () => {
           Save
         </button>
       </div>
+
     </div>
   )
 }

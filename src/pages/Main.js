@@ -69,8 +69,8 @@ function Main() {
             ))}
           </TableBody>
         </Table>
-
-        <Input
+        
+      <Input
         setData={handleSubmit}
       />
       <Link to={`/edit`} className='link-edit'>
