@@ -69,7 +69,7 @@ function Main() {
             ))}
           </TableBody>
         </Table>
-        
+{/*         
       <Input
         setData={handleSubmit}
       />
@@ -77,7 +77,7 @@ function Main() {
         <button className='edit'>
               edit data
         </button>
-      </Link>
+      </Link> */}
       </div>
     </>
   )

@@ -10,10 +10,9 @@
   align-items: center;
 }
 
-
-
 .table {
-  height: calc(100vh - 500px);
+  width: 100vw;
+  height: 12  rem;
   overflow-y: scroll;
   overflow-x: hidden;
 }
@@ -33,7 +32,7 @@
 .box {
   padding-left: 20px;
   width: 25%;
-  height: 50px;
+  height: 3rem;
   display: flex;
   align-items: center;
   justify-content: left;
