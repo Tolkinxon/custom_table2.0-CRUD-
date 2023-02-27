@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom'
 
 function Main() {
   const [select, setSelect] = useState(0)
-  const [heightTable, setHeightTable] = useState(4)
+  const [heightTable, setHeightTable] = useState(15)
 
   const { setData, data, incr, handleSubmit, delee } = useContext(items)
 
@@ -33,11 +33,9 @@ function Main() {
   }, [])
 
   const pageRows = (e) => {
-    console.log(+e.target.value)
-    const count = +e.target.value ? +e.target.value : 4
     setSelect((prev) => prev + 1)
     if (select === 1) {
-      setHeightTable((count + 1) * 3)
+      setHeightTable((+e.target.value + 1) * 3)
       setSelect(0)
     }
   }
@@ -67,7 +65,7 @@ function Main() {
             <TableBody>
               {data.map((row, idx) => (
                 <TableRow key={row.id} id={idx}>
-                  <Box className="id">{idx + 1}</Box>
+                  <Box className="id">{idx}</Box>
                   <Box>{row.name}</Box>
                   <Box>{row.amount}</Box>
                   <Box>{row.protein}</Box>
@@ -89,7 +87,9 @@ function Main() {
           </Table>
 
           <div className="showing-page-bar">
-            <p>Showing 5 of 6 products</p>
+            <p>
+              Showing {heightTable / 3 - 1} of {data.length} products
+            </p>
             <div>
               <div>
                 <label htmlFor="1">Show</label>
@@ -101,7 +101,6 @@ function Main() {
                   <option value="4">4</option>
                   <option value="5">5</option>
                   <option value="6">6</option>
-                  <option value="7">7</option>
                 </select>
               </div>
               <span>
