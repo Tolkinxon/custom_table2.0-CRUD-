@@ -39,6 +39,7 @@ function Main() {
       (ind + 1) * (heightTable / 3 - 1),
     )
   })
+
   // ************ SETTING DATA INFORMATIONS IN THE arr2 ***************/
 
   // ***************** GET REQUEST ****************
@@ -73,18 +74,16 @@ function Main() {
     if (transformButton < 0) {
       setTransformButton(1)
     }
-    
-   if(transformButton === arr.length){
-    setTransformButton(0)
-   }
-    else if (transformButton > arr.length - 2) {
+    if (transformButton === arr.length) {
+      setTransformButton(0)
+    } else if (transformButton > arr.length - 2) {
       setTransformButton(-1)
     }
 
     setCssTransform({
       transform: `translateX(${transformButton * -2}rem)`,
     })
-    console.log(arr.length);
+    console.log(arr.length)
   }, [transformButton])
 
   return (
@@ -109,8 +108,8 @@ function Main() {
                 </Box>
               </div>
             </TableHead>
-            <TableBody>
-              {data.map((row, idx) => (
+            <TableBody>``
+              { data.map((row, idx) => (
                 <TableRow key={row.id} id={idx}>
                   <Box className="id">{idx}</Box>
                   <Box>{row.name}</Box>
@@ -130,6 +129,8 @@ function Main() {
                   </Box>
                 </TableRow>
               ))}
+
+              
             </TableBody>
           </Table>
 
