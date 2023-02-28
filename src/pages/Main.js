@@ -14,6 +14,12 @@ function Main() {
 
   const { setData, data, incr, handleSubmit, delee } = useContext(items)
 
+  const arr = new Array(data.length % (heightTable / 3 - 1) ?
+                        Math.floor(data.length / (heightTable / 3 - 1)) + 1 :
+                        Math.floor(data.length / (heightTable / 3 - 1))).fill("")
+
+
+
   // ***************** GET REQUEST ****************
   useEffect(() => {
     fetch('http://localhost:3001/item')
@@ -105,8 +111,15 @@ function Main() {
               </div>
               <span>
                 <i class="fa-solid fa-angle-left"></i>
-                <span className="active-page">1</span>
-                <span>2</span>
+                      <div className="wrapper-carusel">
+                        <div className='wrapper-numbers'>
+                            {arr.map((item, idx) => (
+                              <>
+                                <span >{idx + 1}</span>
+                              </>
+                            ))}
+                        </div>
+                      </div>
                 <i class="fa-solid fa-angle-right"></i>
               </span>
             </div>
