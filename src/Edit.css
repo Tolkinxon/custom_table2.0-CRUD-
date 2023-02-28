@@ -1,0 +1,40 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.edit-component {
+  margin: 0px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.edit-component h1 {
+  font-family: sans-serif;
+  font-size: 26px;
+}
+
+.edit-component .go-back {
+  background-color: crimson;
+}
+
+.edit-component button {
+  border-radius: 5px;
+  padding: 10px 20px;
+  color: white;
+  font-family: sans-serif;
+  border-width: 0px;
+}
+
+.edit-component h2 {
+  font-family: sans-serif;
+  font-size: 26px;
+}
+
+.update-btn {
+  background-color: darkblue;
+}

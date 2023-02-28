@@ -83,7 +83,7 @@ function Main() {
           React CRUD application using JSON Server and useContext with
           useReducer
         </h1>
-        <button className="add-product">ADD PRODUCT</button>
+        <button className="add-product">ADD</button>
         <div className="wrapper-table">
           <Table style={heightTable}>
             <TableHead>
@@ -113,7 +113,8 @@ function Main() {
                       <Box>{row.protein}</Box>
                       <Box>{row.storage}</Box>
                       <Box>
-                        <button className="edit">edit</button>
+
+                        <Link to={`/edit`}><button className="edit">edit</button></Link>
                         <button
                           onClick={() => {
                             delee(row.id)
