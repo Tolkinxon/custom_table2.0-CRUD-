@@ -32,15 +32,6 @@ function Main() {
   ).fill([])
   //*********** FINDING HOW MANY PAGES WILL BE IN THE TABLE ***********/
 
-  // ************ SETTING DATA INFORMATIONS IN THE arr2 ***************/
-  const arr2 = arr.map((item, ind) => {
-    return data.slice(
-      ind * (heightTable / 3 - 1),
-      (ind + 1) * (heightTable / 3 - 1),
-    )
-  })
-  // ************ SETTING DATA INFORMATIONS IN THE arr2 ***************/
-
   // ***************** GET REQUEST ****************
   useEffect(() => {
     fetch('http://localhost:3001/item')
@@ -80,7 +71,7 @@ function Main() {
     }
 
     setCssTransform({
-      transform: `translateX(${transformButton * -2}rem)`,
+      transform: `translateX(${transformButton * -2.5}rem)`,
     })
     console.log(arr.length)
   }, [transformButton])
@@ -122,7 +113,7 @@ function Main() {
                       <Box>{row.protein}</Box>
                       <Box>{row.storage}</Box>
                       <Box>
-                        <button className='edit'>edit</button>
+                        <button className="edit">edit</button>
                         <button
                           onClick={() => {
                             delee(row.id)
