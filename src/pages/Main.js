@@ -24,21 +24,33 @@ function Main() {
     transformButton,
   } = useContext(items)
 
+
   //*********** FINDING HOW MANY PAGES WILL BE IN THE TABLE ***********/
-  const arr = new Array(
+  
+  const catchData = () => {
+
+    const arr = new Array(
     data.length % (heightTable / 3 - 1)
       ? Math.floor(data.length / (heightTable / 3 - 1)) + 1
       : Math.floor(data.length / (heightTable / 3 - 1)),
   ).fill([])
-  //*********** FINDING HOW MANY PAGES WILL BE IN THE TABLE ***********/
 
-  // ************ SETTING DATA INFORMATIONS IN THE arr2 ***************/
+
   const arr2 = arr.map((item, ind) => {
     return data.slice(
       ind * (heightTable / 3 - 1),
       (ind + 1) * (heightTable / 3 - 1),
     )
   })
+  
+
+ }
+
+  //*********** FINDING HOW MANY PAGES WILL BE IN THE TABLE ***********/
+
+  // ************ SETTING DATA INFORMATIONS IN THE arr2 ***************/
+
+
 
   // ************ SETTING DATA INFORMATIONS IN THE arr2 ***************/
 
@@ -108,8 +120,8 @@ function Main() {
                 </Box>
               </div>
             </TableHead>
-            <TableBody>``
-              { data.map((row, idx) => (
+            <TableBody>
+              {data.map((row, idx) => (
                 <TableRow key={row.id} id={idx}>
                   <Box className="id">{idx}</Box>
                   <Box>{row.name}</Box>
@@ -129,8 +141,6 @@ function Main() {
                   </Box>
                 </TableRow>
               ))}
-
-              
             </TableBody>
           </Table>
 
