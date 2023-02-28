@@ -24,34 +24,21 @@ function Main() {
     transformButton,
   } = useContext(items)
 
-
   //*********** FINDING HOW MANY PAGES WILL BE IN THE TABLE ***********/
-  
-  const catchData = () => {
-
-    const arr = new Array(
+  const arr = new Array(
     data.length % (heightTable / 3 - 1)
       ? Math.floor(data.length / (heightTable / 3 - 1)) + 1
       : Math.floor(data.length / (heightTable / 3 - 1)),
   ).fill([])
+  //*********** FINDING HOW MANY PAGES WILL BE IN THE TABLE ***********/
 
-
+  // ************ SETTING DATA INFORMATIONS IN THE arr2 ***************/
   const arr2 = arr.map((item, ind) => {
     return data.slice(
       ind * (heightTable / 3 - 1),
       (ind + 1) * (heightTable / 3 - 1),
     )
   })
-  
-
- }
-
-  //*********** FINDING HOW MANY PAGES WILL BE IN THE TABLE ***********/
-
-  // ************ SETTING DATA INFORMATIONS IN THE arr2 ***************/
-
-
-
   // ************ SETTING DATA INFORMATIONS IN THE arr2 ***************/
 
   // ***************** GET REQUEST ****************
@@ -98,6 +85,8 @@ function Main() {
     console.log(arr.length)
   }, [transformButton])
 
+ 
+
   return (
     <>
       <div className="App">
@@ -121,26 +110,32 @@ function Main() {
               </div>
             </TableHead>
             <TableBody>
-              {data.map((row, idx) => (
-                <TableRow key={row.id} id={idx}>
-                  <Box className="id">{idx}</Box>
-                  <Box>{row.name}</Box>
-                  <Box>{row.amount}</Box>
-                  <Box>{row.protein}</Box>
-                  <Box>{row.storage}</Box>
-                  <Box>
-                    <button>edit</button>
-                    <button
-                      onClick={() => {
-                        delee(row.id)
-                      }}
-                      className="btn"
-                    >
-                      delete
-                    </button>
-                  </Box>
-                </TableRow>
-              ))}
+              {data.map((row, idx) => {
+                
+               
+                  return (
+                    <TableRow key={row.id} id={idx}>
+                      <Box className="id">{idx}</Box>
+                      <Box>{row.name}</Box>
+                      <Box>{row.amount}</Box>
+                      <Box>{row.protein}</Box>
+                      <Box>{row.storage}</Box>
+                      <Box>
+                        <button>edit</button>
+                        <button
+                          onClick={() => {
+                            delee(row.id)
+                          }}
+                          className="btn"
+                        >
+                          delete
+                        </button>
+                      </Box>
+                    </TableRow>
+                  )
+                      
+              
+              })}
             </TableBody>
           </Table>
 
