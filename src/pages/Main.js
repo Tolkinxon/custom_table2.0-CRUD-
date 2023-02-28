@@ -11,14 +11,34 @@ import { Link } from 'react-router-dom'
 function Main() {
   const [select, setSelect] = useState(0)
   const [heightTable, setHeightTable] = useState(15)
+  const [activePageValue, setActivePageValue] = useState(1)
+  const [data2, setData2] = useState([])
 
   const { setData, data, incr, handleSubmit, delee } = useContext(items)
 
-  const arr = new Array(data.length % (heightTable / 3 - 1) ?
-                        Math.floor(data.length / (heightTable / 3 - 1)) + 1 :
-                        Math.floor(data.length / (heightTable / 3 - 1))).fill("")
+  //*********** FINDING HOW MANY ROWS WILL BE IN THE TABLE ***********/
+  const arr = new Array(
+    data.length % (heightTable / 3 - 1)
+      ? Math.floor(data.length / (heightTable / 3 - 1)) + 1
+      : Math.floor(data.length / (heightTable / 3 - 1)),
+  ).fill([])
 
+  //*********** FINDING HOW MANY ROWS WILL BE IN THE TABLE ***********/
 
+  // ************ SETTING DATA INFORMATIONS IN THE arr2 ***************/
+
+  const arr2 = arr.map((item, ind) => {
+    return data.slice(
+      ind * (heightTable / 3 - 1),
+      (ind + 1) * (heightTable / 3 - 1),
+    )
+  })
+
+ 
+
+  // ************ SETTING DATA INFORMATIONS IN THE arr2 ***************/
+
+  // arr.map((item) => console.log(item))
 
   // ***************** GET REQUEST ****************
   useEffect(() => {
@@ -111,15 +131,23 @@ function Main() {
               </div>
               <span>
                 <i class="fa-solid fa-angle-left"></i>
-                      <div className="wrapper-carusel">
-                        <div className='wrapper-numbers'>
-                            {arr.map((item, idx) => (
-                              <>
-                                <span >{idx + 1}</span>
-                              </>
-                            ))}
-                        </div>
-                      </div>
+                <div className="wrapper-carusel">
+                  <div className="wrapper-pages">
+                    {arr.map((_, idx) => (
+                      <>
+                        <span
+                          className={
+                            activePageValue == idx + 1 ? `active-page` : null
+                          }
+                          key={idx}
+                          onClick={() => setActivePageValue(idx + 1)}
+                        >
+                          {idx + 1}
+                        </span>
+                      </>
+                    ))}
+                  </div>
+                </div>
                 <i class="fa-solid fa-angle-right"></i>
               </span>
             </div>

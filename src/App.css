@@ -154,7 +154,7 @@ body {
   justify-content: space-evenly;
 }
 
-.showing-page-bar > div > span > span.active-page {
+.active-page {
   width: 1.5rem;
   height: 1.5rem;
   border-radius: 50%;
@@ -162,6 +162,28 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+}
+
+.wrapper-carusel {
+  width: 4rem;
+  overflow: hidden;
+}
+
+.wrapper-pages {
+  width: 1000px;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.wrapper-pages span {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
 }
 
 /********* ADD COMPONENT INPUTS *******/
