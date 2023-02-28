@@ -122,12 +122,12 @@ function Main() {
                       <Box>{row.protein}</Box>
                       <Box>{row.storage}</Box>
                       <Box>
-                        <button>edit</button>
+                        <button className='edit'>edit</button>
                         <button
                           onClick={() => {
                             delee(row.id)
                           }}
-                          className="btn"
+                          className="delete"
                         >
                           delete
                         </button>
