@@ -4,7 +4,7 @@ import TableBody from '../components/TableBody'
 import TableRow from '../components/TableRow'
 import Box from '../components/Box'
 import '../App.css'
-import { useEffect, useContext, useState } from 'react'
+import { useEffect, useContext, useState, useLayoutEffect } from 'react'
 import { items } from '../reducer/provider'
 import { Link } from 'react-router-dom'
 
@@ -13,9 +13,16 @@ function Main() {
   const [heightTable, setHeightTable] = useState(15)
   const [activePageValue, setActivePageValue] = useState(1)
   const [cssTransform, setCssTransform] = useState({})
-  const [transformButton, setTransformButton] = useState(0)
 
-  const { setData, data, incr, handleSubmit, delee } = useContext(items)
+  const {
+    setData,
+    data,
+    incr,
+    handleSubmit,
+    delee,
+    setTransformButton,
+    transformButton,
+  } = useContext(items)
 
   //*********** FINDING HOW MANY PAGES WILL BE IN THE TABLE ***********/
   const arr = new Array(
@@ -62,16 +69,23 @@ function Main() {
   }
   //  ************ FINDING HOW MANY ROWS WILL BE IN THE TABLE ***********//
 
-  const caruselButton = (number) => {
-    setTransformButton((prev) => prev + number)
+  useLayoutEffect(() => {
     if (transformButton < 0) {
-      setTransformButton(0)
+      setTransformButton(1)
+    }
+    
+   if(transformButton === arr.length){
+    setTransformButton(0)
+   }
+    else if (transformButton > arr.length - 2) {
+      setTransformButton(-1)
     }
 
     setCssTransform({
       transform: `translateX(${transformButton * -2}rem)`,
     })
-  }
+    console.log(arr.length);
+  }, [transformButton])
 
   return (
     <>
@@ -139,7 +153,7 @@ function Main() {
               <span>
                 <i
                   class="fa-solid fa-angle-left"
-                  onClick={() => caruselButton(-1)}
+                  onClick={() => setTransformButton(1)}
                 ></i>
                 <div className="wrapper-carusel">
                   <div className="wrapper-pages" style={cssTransform}>
@@ -160,7 +174,7 @@ function Main() {
                 </div>
                 <i
                   class="fa-solid fa-angle-right"
-                  onClick={() => caruselButton(1)}
+                  onClick={() => setTransformButton(-1)}
                 ></i>
               </span>
             </div>

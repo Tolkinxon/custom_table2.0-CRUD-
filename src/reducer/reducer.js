@@ -20,6 +20,11 @@ const reducer = (state, action) => {
                 ...state,
                 save: !state.save
             }
+        case 'TRANSFORMBUTTON':
+            return{
+                ...state,
+                transformButton: state.transformButton + action.payload
+            }
         default:
             return state
     }

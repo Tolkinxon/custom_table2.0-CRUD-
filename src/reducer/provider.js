@@ -9,13 +9,18 @@ export const items = createContext()
 const initialState = {
     data: [],
     incr: true,
-    save: true
+    save: true,
+    transformButton: 0
 }
 
 
 const Wrapper = ({children}) => {
 
     const [value, dispatch] = useReducer(reducer, initialState)
+
+    value.setTransformButton = (number) => {
+      dispatch({type: 'TRANSFORMBUTTON', payload: number})
+    }
 
     value.setData = (data) => {
         dispatch({type: 'DATA', payload: data})
