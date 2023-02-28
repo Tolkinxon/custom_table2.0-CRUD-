@@ -85,8 +85,6 @@ function Main() {
     console.log(arr.length)
   }, [transformButton])
 
- 
-
   return (
     <>
       <div className="App">
@@ -110,12 +108,15 @@ function Main() {
               </div>
             </TableHead>
             <TableBody>
-              {data.map((row, idx) => {
-                
-               
+              {data
+                .slice(
+                  (heightTable / 3 - 1) * (activePageValue - 1),
+                  (heightTable / 3 - 1) * activePageValue,
+                )
+                .map((row, idx) => {
                   return (
                     <TableRow key={row.id} id={idx}>
-                      <Box className="id">{idx}</Box>
+                      <Box className="id">{idx + 1}</Box>
                       <Box>{row.name}</Box>
                       <Box>{row.amount}</Box>
                       <Box>{row.protein}</Box>
@@ -133,9 +134,7 @@ function Main() {
                       </Box>
                     </TableRow>
                   )
-                      
-              
-              })}
+                })}
             </TableBody>
           </Table>
 
@@ -159,7 +158,7 @@ function Main() {
               <span>
                 <i
                   class="fa-solid fa-angle-left"
-                  onClick={() => setTransformButton(1)}
+                  onClick={() => setTransformButton(-1)}
                 ></i>
                 <div className="wrapper-carusel">
                   <div className="wrapper-pages" style={cssTransform}>
@@ -180,7 +179,7 @@ function Main() {
                 </div>
                 <i
                   class="fa-solid fa-angle-right"
-                  onClick={() => setTransformButton(-1)}
+                  onClick={() => setTransformButton(1)}
                 ></i>
               </span>
             </div>

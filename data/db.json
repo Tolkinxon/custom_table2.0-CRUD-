@@ -1,13 +1,6 @@
 {
   "item": [
     {
-      "name": "tolkinxon",
-      "amount": "soliyev",
-      "protein": "rewrwe",
-      "storage": "",
-      "id": 1
-    },
-    {
       "name": "1",
       "amount": "fasdf",
       "protein": "fasdf",
@@ -33,84 +26,105 @@
       "amount": "fasdf",
       "protein": "fasdf",
       "storage": "sadfsa",
-      "id": 7
+      "id": 5
     },
     {
       "name": "5",
       "amount": "fasdf",
       "protein": "fasdf",
       "storage": "sadfsa",
-      "id": 10
+      "id": 6
+    },
+    {
+      "name": "6",
+      "amount": "fasdf",
+      "protein": "fasdf",
+      "storage": "sadfsa",
+      "id": 7
+    },
+    {
+      "name": "7",
+      "amount": "fasdf",
+      "protein": "fasdf",
+      "storage": "sadfsa",
+      "id": 8
     },
     {
       "name": "8",
       "amount": "fasdf",
       "protein": "fasdf",
       "storage": "sadfsa",
-      "id": 13
+      "id": 9
     },
     {
       "name": "9",
       "amount": "fasdf",
       "protein": "fasdf",
       "storage": "sadfsa",
-      "id": 14
+      "id": 10
     },
     {
       "name": "10",
       "amount": "fasdf",
       "protein": "fasdf",
       "storage": "sadfsa",
-      "id": 15
+      "id": 11
     },
     {
       "name": "11",
       "amount": "fasdf",
       "protein": "fasdf",
       "storage": "sadfsa",
-      "id": 16
+      "id": 12
     },
     {
       "name": "12",
       "amount": "fasdf",
       "protein": "fasdf",
       "storage": "sadfsa",
-      "id": 17
+      "id": 13
     },
     {
       "name": "13",
       "amount": "fasdf",
       "protein": "fasdf",
       "storage": "sadfsa",
-      "id": 18
+      "id": 14
     },
     {
       "name": "14",
       "amount": "fasdf",
       "protein": "fasdf",
       "storage": "sadfsa",
-      "id": 19
+      "id": 15
     },
     {
       "name": "15",
       "amount": "fasdf",
       "protein": "fasdf",
       "storage": "sadfsa",
-      "id": 20
+      "id": 16
     },
     {
       "name": "16",
       "amount": "fasdf",
       "protein": "fasdf",
       "storage": "sadfsa",
-      "id": 21
+      "id": 17
     },
     {
       "name": "17",
       "amount": "fasdf",
       "protein": "fasdf",
       "storage": "sadfsa",
-      "id": 22
+      "id": 18
+    },
+    {
+      "name": "18",
+      "amount": "fasdf",
+      "protein": "fasdf",
+      "storage": "sadfsa",
+      "id": 19
     }
   ]
 }
