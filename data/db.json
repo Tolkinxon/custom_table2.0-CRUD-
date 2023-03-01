@@ -1,7 +1,7 @@
 {
   "item": [
     {
-      "name": "1",
+      "name": "4",
       "amount": "fasdf",
       "protein": "fasdf",
       "storage": "sadfsa",
@@ -111,20 +111,6 @@
       "protein": "fasdf",
       "storage": "sadfsa",
       "id": 17
-    },
-    {
-      "name": "17",
-      "amount": "fasdf",
-      "protein": "fasdf",
-      "storage": "sadfsa",
-      "id": 18
-    },
-    {
-      "name": "18",
-      "amount": "fasdf",
-      "protein": "fasdf",
-      "storage": "sadfsa",
-      "id": 19
     }
   ]
 }

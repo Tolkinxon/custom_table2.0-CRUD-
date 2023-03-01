@@ -5,14 +5,13 @@ import { useContext } from 'react'
 import { items } from '../reducer/provider'
 import { useState, useEffect } from 'react'
 
-const Edit = () => {
-  const { takeId, data, editDataBase, incr, setIncr } = useContext(items)
-  const data2 = data.filter((item) => item.id === takeId)
+const Add = () => {
+  const { handleSubmit, setIncr } = useContext(items)
 
-  const [name, setName] = useState(data2[0].name)
-  const [amount, setAmount] = useState(data2[0].amount)
-  const [protein, setProtein] = useState(data2[0].protein)
-  const [storage, setStorage] = useState(data2[0].storage)
+  const [name, setName] = useState('')
+  const [amount, setAmount] = useState('')
+  const [protein, setProtein] = useState('')
+  const [storage, setStorage] = useState('')
 
   const datas = (e) => {
     e.target.name == 'name'
@@ -33,7 +32,7 @@ const Edit = () => {
       <Link to={`/`}>
         <button className="go-back">GO BACK</button>
       </Link>
-      <h2>Edit products</h2>
+      <h2>Saving products</h2>
 
       <div className="wrapper-inputs">
         <input
@@ -66,9 +65,9 @@ const Edit = () => {
         />
       </div>
       <button
-        className="update-btn"
+        className="save-btn"
         onClick={() => {
-          editDataBase({ name, amount, protein, storage }, data[0].id)
+          handleSubmit(name, amount, protein, storage)
           setIncr()
           setName('')
           setAmount('')
@@ -76,11 +75,10 @@ const Edit = () => {
           setStorage('')
         }}
       >
-        {' '}
-        UPDATE
+        SAVE
       </button>
     </div>
   )
 }
 
-export default Edit
+export default Add

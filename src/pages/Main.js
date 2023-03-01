@@ -22,6 +22,7 @@ function Main() {
     delee,
     setTransformButton,
     transformButton,
+    setId
   } = useContext(items)
 
   //*********** FINDING HOW MANY PAGES WILL BE IN THE TABLE ***********/
@@ -76,6 +77,8 @@ function Main() {
     console.log(arr.length)
   }, [transformButton])
 
+
+
   return (
     <>
       <div className="App">
@@ -83,7 +86,7 @@ function Main() {
           React CRUD application using JSON Server and useContext with
           useReducer
         </h1>
-        <button className="add-product">ADD</button>
+        <Link to='/add'><button className="add-product">ADD</button></Link>
         <div className="wrapper-table">
           <Table style={heightTable}>
             <TableHead>
@@ -99,7 +102,7 @@ function Main() {
               </div>
             </TableHead>
             <TableBody>
-              {data
+              {data.reverse()
                 .slice(
                   (heightTable / 3 - 1) * (activePageValue - 1),
                   (heightTable / 3 - 1) * activePageValue,
@@ -114,7 +117,7 @@ function Main() {
                       <Box>{row.storage}</Box>
                       <Box>
 
-                        <Link to={`/edit`}><button className="edit">edit</button></Link>
+                        <Link to={`/edit`}><button className="edit" onClick={() => setId(row.id)}>edit</button></Link>
                         <button
                           onClick={() => {
                             delee(row.id)

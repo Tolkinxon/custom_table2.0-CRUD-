@@ -4,6 +4,7 @@
   box-sizing: border-box;
 }
 
+/**************** MAIN CONTAINER **************/
 .edit-component {
   margin: 0px auto;
   display: flex;
@@ -12,14 +13,28 @@
   align-items: center;
   height: 100vh;
 }
+/**************** MAIN CONTAINER **************/
 
+/****************** HEADERS *******************/
 .edit-component h1 {
+  position: fixed;
+  top: 30px;
   font-family: sans-serif;
   font-size: 26px;
 }
 
+.edit-component h2 {
+  font-family: sans-serif;
+  font-size: 26px;
+}
+/****************** HEADERS *******************/
+
+/************** EDIT BUTTONS ****************/
 .edit-component .go-back {
   background-color: crimson;
+  position: fixed;
+  top: 100px;
+  left: 630px;
 }
 
 .edit-component button {
@@ -30,11 +45,30 @@
   border-width: 0px;
 }
 
-.edit-component h2 {
-  font-family: sans-serif;
-  font-size: 26px;
+.update-btn,
+.save-btn {
+  background-color: darkblue;
+  margin-top: 10px;
 }
 
-.update-btn {
-  background-color: darkblue;
+/************** EDIT BUTTONS ****************/
+
+/*************** INPUTS CONTAINER ************/
+.wrapper-inputs {
+  margin: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 20%;
 }
+
+.wrapper-inputs input {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid gray;
+  padding-bottom: 5px;
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+/*************** INPUTS CONTAINER ************/
